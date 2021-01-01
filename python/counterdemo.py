@@ -1,0 +1,10 @@
+from collections import Counter
+count1 = Counter('heelllooo')
+count2 = Counter({'a':2,'b':5,'c':6})
+count3 = Counter(a=5,b=6,c=9)
+#print(count1)
+c = Counter()
+c.update('abcbbdab')
+print(c)
+c.update({'a':3})
+print(c)
