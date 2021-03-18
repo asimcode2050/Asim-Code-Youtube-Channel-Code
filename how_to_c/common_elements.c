@@ -1,3 +1,6 @@
+/*
+https://www.youtube.com/watch?v=2V0Us1E1eYU&ab_channel=AsimCode
+*/
 #include<stdio.h>
 #define max 100
 
