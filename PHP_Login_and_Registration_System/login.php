@@ -18,10 +18,12 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
     require("db.php");
     $user = $_POST["username"];
     $pass = $_POST["password"];
+	password_verify($password, $row['password'])
     $select_query = "SELECT PASSWORD from users WHERE USERNAME='".$conn->real_escape_string($user)."'";
     $result = $conn->query($select_query) or die(mysqli_error($conn));
     $row = $result->fetch_assoc();
-    if($pass == $row["PASSWORD"]){
+   // if($pass == $row["PASSWORD"]){
+   if (password_verify($pass, $row['PASSWORD'])) {
         $_SESSION["user"] = $conn->real_escape_string($user);
         if(isset($_POST["remember"])){
             setcookie("user",$conn->real_escape_string($user), time()+ 60*60*24,"/");
