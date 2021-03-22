@@ -29,6 +29,8 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
     else{
         
         $pass = $conn->real_escape_string($_POST["password"]);
+        //hash the password before storing
+        $pass = password_hash($pass, PASSWORD_DEFAULT);
         $phone = $conn->real_escape_string($_POST["phone"]);
         $insert_query = "INSERT INTO users VALUES ('$user','$pass','$phone')";
        
