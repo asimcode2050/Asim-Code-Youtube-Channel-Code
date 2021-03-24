@@ -15,7 +15,7 @@ def check_password(stored_password, user_password):
     salt.encode('ascii'),
     100000)
     password_hash = binascii.hexlify(password_hash).decode('ascii')
-    return password_hash ==stored_password
+    return password_hash == stored_password
 
 stored_password = hash_password('MyPassword')
 print(stored_password)
