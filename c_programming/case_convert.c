@@ -1,4 +1,7 @@
 // https://youtu.be/JcDgdFrEsDo
+/*
+C program on Linux to convert words uppercase into lower and lowercase into upper
+*/
 #include <stdio.h>
 #include <string.h>
 
