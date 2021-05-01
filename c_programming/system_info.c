@@ -1,5 +1,5 @@
 /*
-C program to read user information, current working directory, 
+C program on Linux to read user information, current working directory, 
 the machine's total and free random-access memory (RAM),
 and current process ID (PID). Learn to Code Subscribe to Asim Code.
 https://youtu.be/pLGXZ17gTRc
