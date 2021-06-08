@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script>
+            function check_boxes(our_form){
+                for(i=0; i<our_form.option.length;i++){
+                    our_form.option[i].checked = true;
+                }
+            }
+
+            function uncheck_boxes(our_form){
+                for(i=0;i<our_form.option.length;i++){
+                    our_form.option[i].checked = false;
+                }
+            }
+        </script>
+
+    </head>
+    <body>
+      <form name="form">
+          <input type="button" value="Check" onclick="check_boxes(this.form)">
+          <input type="button" value="Uncheck" onclick="uncheck_boxes(this.form)">
+          <br>
+          <input type="checkbox" name="option">Java<br>
+          <input type="checkbox" name="option">Python<br>
+          <input type="checkbox" name="option">C++<br>
+          <input type="checkbox" name="option">JavaScript<br>
+     </form>
+
+
+    </body>
+
+</html>
