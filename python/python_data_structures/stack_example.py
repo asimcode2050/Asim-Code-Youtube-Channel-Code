@@ -1,12 +1,13 @@
-class Node(object):
-    def __init__(self,data, next=None):
-        self.data = data
-        self.next = next
 '''
 Python Implement a stack with push, pop, peek
 https://youtu.be/M9mvKj5kNzk
 
 '''
+class Node(object):
+    def __init__(self,data, next=None):
+        self.data = data
+        self.next = next
+
 class Stack(object):
 
     def __init__(self, top=None):
