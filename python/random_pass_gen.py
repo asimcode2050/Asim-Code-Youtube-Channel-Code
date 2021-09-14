@@ -1,7 +1,7 @@
 '''
+Random Password Generator
 Asim Code
 https://youtu.be/L4FSRCdhD0w
-Random Password Generator
 '''
 import random
 import string
