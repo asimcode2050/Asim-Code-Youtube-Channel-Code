@@ -10,6 +10,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.InetSocketAddress;
+
 public class ProxySetting {
     public static void main(String[] args) throws IOException, InterruptedException
      {
@@ -22,9 +23,6 @@ public class ProxySetting {
          HttpResponse<String> response = http_client.send(http_request,HttpResponse.BodyHandlers.ofString());
          System.out.println("Status Code : "+response.statusCode());
          System.out.println("\n Body: "+response.body());
-
-
-       
 
     }
 }
