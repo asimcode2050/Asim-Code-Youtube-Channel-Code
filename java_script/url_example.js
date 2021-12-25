@@ -1,0 +1,15 @@
+let url = new URL("https://somesite.com:8080/shop/name?q=car#fragment");
+console.log(url.href);
+console.log(url.origin);
+console.log(url.protocol);
+console.log(url.host);
+console.log(url.hostname);
+console.log(url.port);
+console.log(url.pathname);
+console.log(url.search);
+console.log(url.hash);
+let ftp_url = new URL("ftp://admin:1234!@ftp.somesite.com/");
+console.log(ftp_url.href);
+console.log(ftp_url.origin);
+console.log(ftp_url.username);
+console.log(ftp_url.password);
