@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Digital Clock</title>
+    <style>
+      #digitclock {
+      font: bold 24px sans-serif;
+      background : #DFFF00;
+      padding: 15px;
+      border: solid black 2px;
+      border-radius: 10px;
+
+      }
+    </style>
+ </head>
+ <body>
+   <h1>My Digital Clock</h1>
+   <span id="digitclock"></span>
+   <script>
+     function showTime(){
+       let clock = document.querySelector("#digitclock");
+       let current_time = new Date();
+       clock.textContent = current_time.toLocaleTimeString();
+     }
+     showTime();
+     setInterval(showTime,1000);
+   </script>
+ </body>
+  </html>
