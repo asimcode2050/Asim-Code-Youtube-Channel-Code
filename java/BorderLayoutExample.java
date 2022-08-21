@@ -1,7 +1,7 @@
 /*
 BorderLayoutExample in Java Swing
 Please Subscribe to Asim Code
-https://youtu.be/qzp1V3es6_Y
+https://youtu.be/JebCfHULLSk
 */
 import javax.swing.*;
 import java.awt.*;
