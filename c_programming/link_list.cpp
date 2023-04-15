@@ -1,7 +1,7 @@
 /*
 Singly linked list in C++
 https://youtu.be/PVAmSCbKsa0
-Youtube: Asim Code
+YouTube: Asim Code
 */
 #include <iostream>
 #include <cstdlib>
