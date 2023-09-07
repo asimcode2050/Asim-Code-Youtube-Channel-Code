@@ -10,7 +10,7 @@ int main()
 {
     int a{2};
     // postfix increment
-    cout << "a before psotincrement: " << a << "\n";
+    cout << "a before postincrement: " << a << "\n";
     cout << " postincrementing a: " << a++ << "\n";
     cout << " a after postincrement: " << a << "\n";
 
