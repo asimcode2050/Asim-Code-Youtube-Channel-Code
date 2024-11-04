@@ -1,4 +1,3 @@
-# In this video we will write Python code that demonstrates how to add 2D NumPy arrays with differing shapes
 import numpy as np
 
 # Define a 2D array A with shape (3, 2)
