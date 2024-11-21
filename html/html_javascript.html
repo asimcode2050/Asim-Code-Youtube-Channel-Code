@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simple Interaction</title>
+    </head>
+
+    <body>
+        <button id="myButton">Click Me</button>
+        <p id="message" style="display: none;">You clicked the button!</p>
+        <script>
+            document.getElementById('myButton').onclick = function () {
+
+                document.getElementById('message').style.display = 'block';
+
+            };
+
+        </script>
+    </body>
+
+</html>
