@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Canvas Example</title>
+    </head>
+
+    <body>
+        <canvas id="myCanvas" width="400" height="400"></canvas>
+        <script>
+            const canvas = document.getElementById('myCanvas');
+
+            const ctx = canvas.getContext('2d');
+
+            ctx.fillStyle = 'blue';
+
+            ctx.fillRect(50, 50, 200, 100);
+
+            ctx.beginPath();
+
+            ctx.arc(250, 250, 50, 0, Math.PI * 2);
+
+            ctx.fillStyle = 'green';
+
+            ctx.fill();
+
+            ctx.beginPath();
+
+            ctx.moveTo(100, 300);
+
+            ctx.lineTo(300, 300);
+
+            ctx.strokeStyle = 'red';
+
+            ctx.lineWidth = 5;
+
+            ctx.stroke();
+
+            ctx.font = '30px Arial';
+
+            ctx.fillStyle = 'purple';
+
+            ctx.fillText('Canvas Example!', 100, 350);
+
+        </script>
+    </body>
+
+</html>
