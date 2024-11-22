@@ -1,0 +1,14 @@
+let greeting = "Hello, World!";
+let anotherGreeting = 'Hello, again!';
+let complexString = `This is a string with a number: ${42}`;
+console.log(greeting);
+console.log(anotherGreeting);
+console.log(complexString);
+let lengthOfString = greeting.length;
+console.log(lengthOfString);
+let newGreeting = greeting.replace('World', 'Universe');
+console.log(newGreeting);
+let firstCharacter = greeting[0];
+console.log(firstCharacter);
+let combinedGreeting = greeting + " How are you?";
+console.log(combinedGreeting);  
