@@ -1,0 +1,20 @@
+// SVG graphics in HTML allow you to create images directly in a webpage using a special format called Scalable Vector Graphics (SVG). This format is great because it scales perfectly without losing quality, unlike other image formats like JPEG or PNG that might get blurry when resized. SVG is built using XML, which means it is essentially code that tells the browser how to draw shapes, lines, colors, and more. The beauty of SVG is that it is responsive and flexible. Whether you are working with simple shapes like circles or complex patterns, SVG can handle it. Since SVG graphics are made from code, you can also animate and interact with them using JavaScript and CSS, which opens up a lot of possibilities for dynamic websites. Here is a simple example to explain how SVG works in HTML:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SVG Example</title>
+</head>
+<body>
+// SVG starts here
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+// Draw a red circle
+<circle cx="100" cy="100" r="50" fill="red" />
+// Draw a blue rectangle
+<rect x="50" y="50" width="100" height="100" fill="blue" />
+// Draw a green line
+<line x1="0" y1="0" x2="200" y2="200" stroke="green" stroke-width="5" />
+</svg>
+</body>
+</html>
