@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Drag and Drop Example</title>
+        <style>
+            #drag-item {
+                width: 150px;
+                height: 150px;
+                background-color: lightblue;
+                text-align: center;
+                line-height: 150px;
+                border: 2px solid #000;
+                cursor: pointer;
+            }
+
+            #drop-area {
+                width: 400px;
+                height: 400px;
+                border: 2px dashed #000;
+                margin-top: 20px;
+                position: relative;
+                text-align: center;
+                line-height: 400px;
+                color: gray;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="drag-item" draggable="true"> Drag me! </div>
+        <div id="drop-area"> Drop here </div>
+        <script>
+            const dragItem = document.getElementById('drag-item');
+
+            const dropArea = document.getElementById('drop-area');
+
+            dragItem.addEventListener('dragstart', (event) => {
+
+                event.dataTransfer.setData('text', event.target.id);
+
+            });
+
+            dropArea.addEventListener('dragover', (event) => {
+
+                event.preventDefault();
+
+                dropArea.style.backgroundColor = 'lightyellow';
+
+            });
+
+
+
+            dropArea.addEventListener('drop', (event) => {
+
+                event.preventDefault();
+
+                const data = event.dataTransfer.getData('text');
+
+                const draggedElement = document.getElementById(data);
+
+                dropArea.appendChild(draggedElement);
+
+                dropArea.style.backgroundColor = '';
+
+                dropArea.textContent = 'Item dropped!';
+
+            });
+
+        </script>
+    </body>
+
+</html>
