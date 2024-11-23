@@ -1,0 +1,14 @@
+const phonePattern = /\(\d{3}\) \d{3}-\d{4}/; // the format (XXX) XXX-XXXX
+const testString = "Call me at (123) 456-7890 or (987) 654-3210";
+const isMatch = phonePattern.test(testString);
+console.log(isMatch); // This will print true because the pattern matches the phone numbers
+const matches = testString.match(phonePattern);
+console.log(matches); // This will print ['(123) 456-7890', '(987) 654-3210']
+/*
+ Explanation of the regular expression:
+\(\d{3}\) means we are looking for exactly three digits inside parentheses
+\d means any digit (0-9)
+{3} means exactly three digits
+\d{4} means exactly four digits after the hyphen
+The spaces and hyphen are part of the pattern as well
+*/
