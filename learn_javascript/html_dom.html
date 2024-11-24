@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <body>
+        <button id="changeColorButton">Change Color</button>
+        <p id="textParagraph">This is a paragraph of text.</p>
+        <script>
+            var changeColorButton = document.getElementById('changeColorButton');
+
+            var textParagraph = document.getElementById('textParagraph');
+
+            function changeTextColor() {
+
+                textParagraph.style.color = 'blue';
+
+            }
+
+            changeColorButton.addEventListener('click', changeTextColor);
+
+        </script>
+    </body>
+
+</html>
