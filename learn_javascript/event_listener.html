@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EventListener Example</title>
+    </head>
+
+    <body>
+        <button id="clickMeBtn">Click Me!</button>
+        <script>
+            var button = document.getElementById('clickMeBtn');
+
+            button.addEventListener('click', function () {
+
+                var currentDateTime = new Date();
+
+                console.log('Button clicked at: ' + currentDateTime);
+
+                button.innerText = 'You clicked me at ' + currentDateTime;
+
+            });
+
+        </script>
+    </body>
+
+</html>
