@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript DOM Event Example</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                transition: background-color 0.5s ease;
+                padding: 20px;
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <button id="colorButton">Change Background Color</button>
+        <script>
+            var button = document.getElementById("colorButton");
+
+            var colors = ["red", "blue", "green", "yellow", "purple", "orange"];
+
+            var currentColorIndex = 0;
+
+            function changeBackgroundColor() {
+
+                document.body.style.backgroundColor = colors[currentColorIndex];
+
+                currentColorIndex++;
+
+                if (currentColorIndex >= colors.length) {
+
+                    currentColorIndex = 0;  // Reset the index back to 0.
+
+                }
+
+            }
+
+            button.addEventListener("click", changeBackgroundColor);
+
+        </script>
+    </body>
+
+</html>
