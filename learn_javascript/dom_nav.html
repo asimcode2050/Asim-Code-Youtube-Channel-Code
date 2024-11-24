@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>JavaScript DOM Navigation Example</title>
+    </head>
+
+    <body>
+        <div id="container">
+            <p id="paragraph1">This is the first paragraph.</p>
+            <p id="paragraph2">This is the second paragraph.</p>
+            <p id="paragraph3">This is the third paragraph.</p>
+            <button id="changeTextBtn">Change Text</button>
+        </div>
+        <script>
+            var button = document.getElementById("changeTextBtn");
+
+            button.addEventListener("click", function () {
+
+                var paragraphs = document.querySelectorAll("#container p");
+
+                paragraphs.forEach(function (paragraph, index) {
+
+                    paragraph.textContent = "This is paragraph number " + (index + 1);
+
+                });
+
+            });
+
+        </script>
+    </body>
+
+</html>
