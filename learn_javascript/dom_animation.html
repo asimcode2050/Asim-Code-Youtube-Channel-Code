@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simple Animation Example</title>
+        <style>
+            #box {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                position: absolute;
+                top: 50px;
+                left: 50px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="box"></div>
+        <script>
+            var box = document.getElementById("box");
+
+            var position = 0;
+
+            var direction = 1;
+
+            function animate() {
+
+                position += 5 * direction;
+
+                if (position > window.innerWidth - 100 || position < 0) {
+
+                    direction = -direction;
+
+                }
+
+                box.style.left = position + "px";
+
+                requestAnimationFrame(animate);
+
+            }
+
+            window.onload = function () {
+
+                animate(); // Call the animate function to begin the animation
+
+            };
+
+        </script>
+    </body>
+
+</html>
