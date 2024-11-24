@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>DOM Collection Example</title>
+    </head>
+
+    <body>
+        <h1>Welcome to the DOM Collection Example</h1>
+        <p class="message">First paragraph with a message.</p>
+        <p class="message">Second paragraph with a message.</p>
+        <p class="message">Third paragraph with a message.</p>
+        <button id="changeTextButton">Change Text</button>
+        <script>
+            var messageElements = document.getElementsByClassName("message");
+
+            function changeText() {
+
+                for (var i = 0; i < messageElements.length; i++) {
+
+                    messageElements[i].textContent = "This is the new text!";
+
+                }
+
+            }
+
+            var button = document.getElementById("changeTextButton");
+
+            button.addEventListener("click", changeText);
+
+        </script>
+    </body>
+
+</html>
