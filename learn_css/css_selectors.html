@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>CSS Selectors Example</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            p {
+                color: blue;
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+
+            .highlight {
+                background-color: yellow;
+                padding: 5px;
+                border-radius: 5px;
+            }
+
+            #main-title {
+                font-size: 24px;
+                font-weight: bold;
+                text-align: center;
+                color: darkgreen;
+            }
+
+            p span {
+                font-style: italic;
+                color: red;
+            }
+
+            p+div {
+                margin-top: 20px;
+                border: 1px solid black;
+            }
+
+            input[type="text"] {
+                border: 2px solid blue;
+                padding: 10px;
+            }
+
+            button:hover {
+                background-color: green;
+                color: white;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1 id="main-title">Welcome to CSS Selectors Tutorial</h1>
+        <p>This is a <span>simple</span> example to show <span>CSS</span> selectors.</p>
+        <p class="highlight">This paragraph has a yellow background because it has the "highlight" class.</p>
+        <button>Hover over me!</button>
+        <input type="text" placeholder="Type here">
+        <p>This paragraph is followed by a div element.</p>
+        <div>This is the div that follows the paragraph. It gets styled because of the adjacent sibling selector.</div>
+    </body>
+
+</html>
