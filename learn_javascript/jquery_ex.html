@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Button Click Example</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <style>
+            #myButton {
+                padding: 10px 20px;
+                font-size: 16px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                cursor: pointer;
+                margin-bottom: 10px;
+            }
+
+            #myButton:hover {
+                background-color: #45a049;
+            }
+
+            #resetButton {
+                padding: 10px 20px;
+                font-size: 16px;
+                background-color: #f44336;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+
+            #resetButton:hover {
+                background-color: #e53935;
+            }
+
+            #countDisplay {
+                font-size: 20px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+        <button id="myButton">Click Me!</button>
+        <button id="resetButton">Reset</button>
+        <div id="countDisplay">Button clicked 0 times.</div>
+        <script>
+            $(document).ready(function () {
+
+                let clickCount = 0;
+
+                $("#myButton").click(function () {
+
+                    clickCount++;
+
+                    $("#countDisplay").text("Button clicked " + clickCount + " times.");
+
+                    if (clickCount === 5) {
+
+                        $("#myButton").css("background-color", "red");
+
+                        clickCount = 0;
+
+                        $("#countDisplay").text("Click count has been reset!");
+
+                    }
+
+                });
+
+                $("#resetButton").click(function () {
+
+                    clickCount = 0;
+
+                    $("#myButton").css("background-color", "");
+
+                    $("#countDisplay").text("Click count has been reset!");
+
+                });
+
+            });
+
+        </script>
+    </body>
+
+</html>
