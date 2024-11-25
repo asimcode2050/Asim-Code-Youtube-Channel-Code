@@ -1,0 +1,85 @@
+<!DOCTYPEhtml>
+    <html lang="en">
+
+        <head>
+            <title>Theme Switcher Example</title>
+            <style>
+                body.light {
+                    background-color: #f0f0f0;
+                    color: #333;
+                }
+
+                body.dark {
+                    background-color: #333;
+                    color: #f0f0f0;
+                }
+
+                #themeSwitcher {
+                    padding: 10px 20px;
+                    font-size: 16px;
+                    cursor: pointer;
+                    margin-top: 20px;
+                    border: none;
+                    border-radius: 5px;
+                }
+
+                #noSupportMessage {
+                    color: red;
+                    margin-top: 20px;
+                    font-size: 16px;
+                }
+            </style>
+        </head>
+
+        <body>
+            <button id="themeSwitcher">Switch Theme</button>
+            <div id="noSupportMessage" style="display:none;"></div>
+            <script>
+                if (typeof (Storage) !== "undefined") {
+
+                    var userPreferenceKey = "userTheme"; // This is the name under which we store the data
+
+                    var savedPreference = localStorage.getItem(userPreferenceKey);
+
+                    if (savedPreference === null) {
+
+                        savedPreference = "light";
+
+                        localStorage.setItem(userPreferenceKey, savedPreference);
+
+                    }
+
+                    document.body.className = savedPreference;
+
+                    document.getElementById("themeSwitcher").addEventListener("click", function () {
+
+                        if (document.body.className === "light") {
+
+                            document.body.className = "dark";
+
+                            localStorage.setItem(userPreferenceKey, "dark");
+
+                        } else {
+
+                            document.body.className = "light";
+
+                            localStorage.setItem(userPreferenceKey, "light");
+
+                        }
+
+                    });
+
+                } else {
+
+                    var messageElement = document.getElementById("noSupportMessage");
+
+                    messageElement.style.display = "block";
+
+                    messageElement.innerText = "Your browser does not support Web Storage. Some features may not work.";
+
+                }
+
+            </script>
+        </body>
+
+    </html>
