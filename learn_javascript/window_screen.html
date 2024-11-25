@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Screen Information</title>
+    </head>
+
+    <body>
+        <h1>Screen Information</h1>
+        <div id="screen-info">
+        </div>
+        <script>
+            let screenWidth = window.screen.width;
+
+            let screenHeight = window.screen.height;
+
+            let colorDepth = window.screen.colorDepth;
+
+            let availableWidth = window.screen.availWidth;
+
+            let availableHeight = window.screen.availHeight;
+
+            function displayScreenInfo() {
+
+                let screenInfo = `
+        
+                Screen Width: ${screenWidth}px
+        
+                Screen Height: ${screenHeight}px
+        
+                Color Depth: ${colorDepth}-bit
+        
+                Available Screen Width: ${availableWidth}px
+        
+                Available Screen Height: ${availableHeight}px
+        
+                `;
+
+                document.getElementById('screen-info').innerHTML = `<pre>${screenInfo}</pre>`;
+
+            }
+
+            displayScreenInfo();
+
+        </script>
+    </body>
+
+</html>
