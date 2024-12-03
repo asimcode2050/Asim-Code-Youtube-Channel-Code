@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Real-Time Mouse Tracking Animation</title>
+        <style>
+            #myElement {
+                width: 50px;
+                height: 50px;
+                background-color: red;
+                position: absolute;
+                border-radius: 50%;
+            }
+        </style>
+    </head>
+
+    <body>
+       
+        <div id="myElement"></div> 
+        <script>
+            const element = document.getElementById('myElement');
+
+            let x = 0;
+
+            let y = 0;
+
+            function animate() {
+
+                element.style.left = x + 'px';
+
+                element.style.top = y + 'px';
+
+                requestAnimationFrame(animate);
+
+            }
+
+            document.addEventListener('mousemove', function (event) {
+
+                x = event.clientX - element.offsetWidth / 2;
+
+                y = event.clientY - element.offsetHeight / 2;
+
+            });
+
+            animate();
+
+        </script>
+    </body>
+
+</html>
