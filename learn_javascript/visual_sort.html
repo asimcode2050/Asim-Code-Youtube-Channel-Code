@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sorting Algorithm Visualizer</title>
+        <style>
+            #container {
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                height: 400px;
+                margin-top: 50px;
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .bar {
+                width: 30px;
+                margin: 0 2px;
+                background-color: #4CAF50;
+                display: inline-block;
+                transition: height 0.5s ease;
+                position: relative;
+            }
+
+            .number {
+                position: absolute;
+                bottom: -20px;
+                width: 100%;
+                text-align: center;
+                font-size: 12px;
+                color: black;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="container"></div>
+        <script>
+            let arr = [30, 10, 50, 40, 20];
+
+
+
+            function updateVisualization() {
+
+                let container = document.getElementById('container');
+
+                container.innerHTML = '';
+
+                for (let i = 0; i < arr.length; i++) {
+
+                    let bar = document.createElement('div');
+
+                    bar.classList.add('bar');
+
+                    bar.style.height = arr[i] * 5 + 'px';
+
+                    let number = document.createElement('div');
+
+                    number.classList.add('number');
+
+                    number.innerText = arr[i];
+
+                    bar.appendChild(number);
+
+                    container.appendChild(bar);
+
+                }
+
+            }
+
+            function bubbleSort() {
+
+                let n = arr.length;
+
+                let swapped;
+
+
+
+                (function sortStep() {
+
+                    swapped = false;
+
+                    for (let i = 0; i < n - 1; i++) {
+
+                        if (arr[i] > arr[i + 1]) {
+
+                            let temp = arr[i];
+
+                            arr[i] = arr[i + 1];
+
+                            arr[i + 1] = temp;
+
+                            swapped = true;
+
+                        }
+
+                    }
+
+                    updateVisualization();
+
+                    n--;
+
+                    if (swapped) {
+
+                        setTimeout(sortStep, 1500);
+
+                    }
+
+                })();  // Immediately invoke the sortStep function to start the sorting
+
+            }
+
+
+
+            updateVisualization();
+
+
+
+            bubbleSort();
+
+        </script>
+    </body>
+
+</html>
