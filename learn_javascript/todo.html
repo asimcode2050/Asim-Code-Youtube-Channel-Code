@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Todo App</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #f4f4f9;
+                margin: 0;
+            }
+
+            .todo-container {
+                background-color: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                width: 300px;
+                text-align: center;
+            }
+
+            #todoInput {
+                width: 80%;
+                padding: 10px;
+                margin-right: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            #addTodoBtn {
+                padding: 10px;
+                border: none;
+                background-color: #007BFF;
+                color: white;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            #addTodoBtn:hover {
+                background-color: #0056b3;
+            }
+
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            li {
+                background-color: #f9f9f9;
+                padding: 10px;
+                margin-top: 10px;
+                border-radius: 4px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 16px;
+            }
+
+            li.completed {
+                text-decoration: line-through;
+                color: #888;
+            }
+
+            button {
+                background: transparent;
+                border: none;
+                color: #ff0000;
+                cursor: pointer;
+                font-size: 14px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="todo-container">
+            <h1>Todo App</h1>
+            <input type="text" id="todoInput" placeholder="Add a new task...">
+            <button id="addTodoBtn">Add Task</button>
+            <ul id="todoList"></ul>
+        </div>
+        <script>
+            const todoInput = document.getElementById('todoInput');
+
+            const addTodoBtn = document.getElementById('addTodoBtn');
+
+            const todoList = document.getElementById('todoList');
+
+            function addTodo() {
+
+                const todoText = todoInput.value.trim();
+
+                if (todoText !== '') {
+
+                    const li = document.createElement('li');
+
+                    li.textContent = todoText;
+
+                    const deleteBtn = document.createElement('button');
+
+                    deleteBtn.textContent = 'Delete';
+
+                    deleteBtn.onclick = () => li.remove();
+
+                    li.onclick = () => {
+
+                        li.classList.toggle('completed');
+
+                    };
+
+                    li.appendChild(deleteBtn);
+
+                    todoList.appendChild(li);
+
+                    todoInput.value = '';
+
+                }
+
+            }
+
+            addTodoBtn.addEventListener('click', addTodo);
+
+            todoInput.addEventListener('keypress', (e) => {
+
+                if (e.key === 'Enter') {
+
+                    addTodo(); // Call the addTodo function to add the task
+
+                }
+
+            });
+
+        </script>
+    </body>
+
+</html>
