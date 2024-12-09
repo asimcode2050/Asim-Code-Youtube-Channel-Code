@@ -1,0 +1,31 @@
+#include <stdio.h>
+struct Student
+{
+    char name[50];
+    int age;
+    float grade;
+};
+void displayStudent(struct Student student)
+{
+    printf("Displaying student information (by value):\n");
+    printf("Name: %s\n", student.name);
+    printf("Age: %d\n", student.age);
+    printf("Grade: %.2f\n", student.grade);
+    student.age = 22;
+    printf("Updated Age (inside function): %d\n", student.age);
+}
+void updateStudent(struct Student *student)
+{
+    printf("\nUpdating student information (by reference):\n");
+    student->age = 23;
+    printf("Updated Age (outside function): %d\n", student->age);
+}
+int main()
+{
+    struct Student student1 = {"Alice", 20, 90.5};
+    displayStudent(student1);
+    printf("\nOriginal Age before update: %d\n", student1.age);
+    updateStudent(&student1);
+    printf("Original Age after update: %d\n", student1.age);
+    return 0;
+}
