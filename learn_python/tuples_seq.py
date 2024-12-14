@@ -1,6 +1,6 @@
 ''' 
 my_tuple = (1, 2, 3)
-'''
+
 "John" (a string)
 16 (an integer)
 92 (an integer)
