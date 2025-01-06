@@ -1,0 +1,17 @@
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+data = np.random.rand(5, 5)
+df = pd.DataFrame(data, columns=['A', 'B', 'C', 'D', 'E'])
+corr_matrix = df.corr()
+plt.figure(figsize=(8, 6))
+sns.heatmap(corr_matrix,
+            annot=True,
+            cmap='coolwarm',
+            linewidths=0.5,
+            linecolor='black',
+            cbar_kws={'label': 'Correlation Coefficient'})
+
+plt.title("Heatmap of Correlation Matrix")  # Add a title for our heatmap
+plt.show()
